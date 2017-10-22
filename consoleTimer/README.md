@@ -1,7 +1,7 @@
 # consoleTimer
 This is a timer working in console (both Windows and \*nix). This was indeed a experiment assignment, but teacher's intention was to write a console program working only in Windows. As a Mac user, I felt VERY UNHAPPY, so I wrote this cross-platform program.
 
-## Feature
+## Features
 
 1. **TOO Colorful Time display! (Can be disabled by modifying source code)**
 
