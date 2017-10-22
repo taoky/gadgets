@@ -1,8 +1,6 @@
 /* AUTHOR: Tao Keyu
  * A colorful timer supporting both Windows and *nix (including Linux, macOS).
  * Requires curses when compiling in *nix.
- * When compiling in *nix, you need:
- * gcc timer.c -lcurses -o timer
 */
 
 #include <stdio.h>
