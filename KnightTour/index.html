@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
+    <title>Knight Tour: Electron</title>
+	</head>
+	<body>
+		<div class="row" id="main-content">
+			<div class="col" id="button-container">
+				<div class="row-sm">
+					<button type="button" class="btn btn-primary" id="btn-run">Run!</button>
+					<div id="loading" hidden>
+							<div class="double-bounce1"></div>
+							<div class="double-bounce2"></div>
+					</div>
+				</div>
+				<div class="row-sm">
+            <span>n: </span>
+            <input id="spinner" type="number" value="5" min="5" max="100" step="1" />
+				</div>
+				<div class="row-sm">
+						<span>Speed (Interval, ms): </span>
+						<input id="speed" type="range" value="100" min="1" max="1000" step="1" />
+						<span id="speedRes"></span>
+				</div>
+        <div class="row-sm">
+          <a role="button" class="btn btn-outline-secondary" id="btn-all" disabled>Calculate all solutions</a>
+        </div>
+			</div>
+			<div class="col container" id="canvas-container">
+				<canvas id="canvas" width="550" height="550">
+          <p>Don't support canvas? Maybe you are using a fake Electron shell.</p>
+        </canvas>
+			</div>
+		</div>
+		<script>window.$ = window.jQuery = require('jquery');</script>
+		<script src="node_modules/bootstrap-input-spinner/src/InputSpinner.js"></script>
+		<script>
+			// You can also require other files to run in this process
+			require("bootstrap")
+			require('./renderer.js')
+		</script>
+	</body>
+</html>
