@@ -1,4 +1,4 @@
-This is the final assignment of my Program Designning class. It is a personal "bank" or "vault" to store your bill.
+This is the final assignment of my Program Designing I course. It is a personal "bank" or "vault" to store your bill.
 
 ## Features
 
