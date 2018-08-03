@@ -108,7 +108,7 @@ int lsh_cat(char **args)
 
 int lsh_sh(char **args)
 {
-  fprintf(stderr, "sh: Operation not permitted\n");
+  fprintf(stderr, "sh: restricted\n");
   return 1;
 }
 
@@ -129,7 +129,7 @@ int lsh_exit(char **args)
  */
 int lsh_launch(char **args)
 {
-  fprintf(stderr, "sh: %s: not found\n", args[0]);
+  fprintf(stderr, "sh: %s: restricted\n", args[0]);
 
   return 1;
 }
@@ -287,22 +287,36 @@ void lsh_loop(void)
  */
 int main(int argc, char **argv)
 {
-  // Load config files, if any.
-  // for (int i = 0; i < argc; i++)
-  // {
-  //   printf("%s ", argv[i]);
-  //   puts("");
-  // }
-  if (argc > 2)
+  if (argc > 1)
   {
-    if (strcmp(argv[1], "-c") == 0 &&
-        (strcmp(argv[2], "sh") == 0 || strcmp(argv[2], "/bin/sh") == 0))
+    if (argc >= 3 && strcmp(argv[1], "-c") == 0)
     {
-      lsh_real_launch(argv + 2);
-    }
-    else if (strcmp(argv[1], "-c") == 0)
-    {
-      fprintf(stderr, "sh: not found\n");
+      /* now supports:
+         system("sh"); system("/bin/sh");
+         system("cat flag"); system("/bin/cat flag");
+         system("ls [OPTION]... [FILE]...")
+         in chrooted environment.
+      */
+      if (strcmp(argv[2], "sh") == 0 || strcmp(argv[2], "/bin/sh") == 0)
+      {
+        /* `sh -c /bin/sh` or `sh -c sh` */
+        /* arguments after sh are ignored */
+        goto exec;
+      }
+      else if (strcmp(argv[2], "cat") == 0 || strcmp(argv[2], "/bin/cat") == 0)
+      {
+        /* `sh -c /bin/cat xxx` or `sh -c cat xxx` */
+        lsh_cat(argv + 2);
+      }
+      else if (strcmp(argv[2], "ls") == 0 || strcmp(argv[2], "/bin/ls") == 0)
+      {
+        /* `sh -c /bin/ls xxx` or `sh -c ls xxx` */
+        lsh_ls(argv + 2);
+      }
+      else
+      {
+        lsh_launch(argv + 2); // jmp to fake launch function
+      }
     }
     else
     {
@@ -310,10 +324,8 @@ int main(int argc, char **argv)
     }
     exit(0);
   }
-  // Run command loop.
+exec:
   lsh_loop();
-
-  // Perform any shutdown/cleanup.
 
   return EXIT_SUCCESS;
 }
