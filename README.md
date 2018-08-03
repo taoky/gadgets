@@ -1,6 +1,6 @@
 # gadgets
 
-This is a gadget collection of TaoKY.
+This is a gadget collection of taoky.
 
 You may see something useful or useless here.
 
