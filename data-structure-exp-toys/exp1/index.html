@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Little Game Simulator</title>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="user.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="text-center">
+    <h1>Little Game Simulator</h1>
+</div>
+
+<div class="container" id="new-simulation">
+    <div class="text-center">
+        <h3>New simulation</h3>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-md-2">
+            <input type="button" id="btnOpenFile" class="btn btn-secondary" value="Open File"/>
+        </div>
+        <div class="col-md-10">
+            <input type="text" class="form-control" id="txtFileName">
+        </div>
+    </div>
+
+    <div class="form-horizontal text-center">
+        <input type="button" id="btnStart" class="btn btn-primary" value="Start"/>
+    </div>
+</div>
+<div class="container" id="simulation" style="display: none;">
+    <div class="form-group row text-center">
+        <div class="col-md-12 text-center">
+            <input type="button" id="nextEvent" class="btn btn-secondary" value="Next Event">
+        </div>
+    </div>
+    <div id="personContainer" class="container">
+        <div id="personRow" class="form-group row person" style="display: none;">
+            <div class="col-md-2">
+                <label for="personName">Name</label>
+                <input type="text" name="personName" class="form-control" readonly/>
+            </div>
+            <div class="col-md-2">
+                <label for="personHp">HP</label>
+                <input type="text" name="personHp" class="form-control" readonly/>
+            </div>
+            <div class="col-md-2">
+                <label for="personMp">MP</label>
+                <input type="text" name="personMp" class="form-control" readonly/>
+            </div>
+            <div class="col-md-3">
+                <label for="personPd">Physical Defense</label>
+                <input type="text" name="personPd" class="form-control" readonly/>
+            </div>
+            <div class="col-md-3">
+                <label for="personMd">Magical Defense</label>
+                <input type="text" name="personMd" class="form-control" readonly/>
+            </div>
+        </div>
+    </div>
+    <pre id="console">Simulation started</pre>
+</div>
+
+<script src="renderer.js"></script>
+</body>
+</html>

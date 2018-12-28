@@ -1,0 +1,44 @@
+h1 {
+    margin-top: 2rem;
+}
+
+.person-dead {
+    background: #E9ECEF;
+}
+
+.person-winner {
+    background: #FEC;
+}
+
+.form-control.person-data {
+    background-color: #FFF;
+    transition: background-color 1s ease, color 1s ease;
+}
+
+.person-dead .form-control.person-data {
+    background: #E9ECEF;
+}
+
+.form-control.person-data.updated {
+    background-color: #00F;
+    color: #FFF;
+    transition: background-color 0s ease, color 0s ease;
+}
+
+.form-control.person-data.updated.increased {
+    background-color: #8F8;
+    color: #000;
+}
+
+.form-control.person-data.updated.decreased {
+    background-color: #F88;
+    color: #000;
+}
+
+pre#console {
+    background-color: #E9ECEF;
+    padding: 1em;
+    border: solid 1px grey;
+    border-top-left-radius: 1.6em;
+    max-height: 32em;
+}

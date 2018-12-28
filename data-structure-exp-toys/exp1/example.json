@@ -1,0 +1,121 @@
+{
+  "peopleList": [
+    {
+      "name": "Alice",
+      "hp": 105,
+      "pd": 72,
+      "mp": 78,
+      "md": 115,
+      "events": [
+        {
+          "name": "Physical Attack",
+          "attributes": ["attack", "physical", "leastHp", 10, 20, 1]
+        },
+        {
+          "name": "Magical Attack",
+          "attributes": ["attack", "magical", "leastMd", 30, 40, 0.90]
+        },
+        {
+          "name": "A trade for Life",
+          "attributes": ["heal", "hp", 10, 15, 1]
+        },
+        {
+          "name": "A Little More Magic",
+          "attributes": ["heal", "mp", 10, 0, 0.95]
+        },
+        {
+          "name": "More Muscle Power",
+          "attributes": ["magic", "pa", 30, 20, 10, 1]
+        },
+        {
+          "name": "More Physical Defense",
+          "attributes": ["magic", "pd", 30, 20, 5, 1]
+        }
+      ],
+      "eventSeq": [0, 0, 1, 3, 3, 4, 5, 2],
+      "freezeTime": 10,
+      "priority": 1
+    },
+    {
+      "name": "Bob",
+      "hp": 102,
+      "pd": 98,
+      "mp": 92,
+      "md": 77,
+      "events": [
+        {
+          "name": "Hitting the Weakness",
+          "attributes": ["attack", "physical", "leastHp", 30, 40, 0.90]
+        },
+        {
+          "name": "Hitting the Defenceless",
+          "attributes": ["attack", "physical", "leastMp", 30, 40, 0.90]
+        },
+        {
+          "name": "Try Some Magic",
+          "attributes": ["attack", "magical", "leastMd", 20, 30, 0.85]
+        },
+        {
+          "name": "Hitting the Least Magical Power",
+          "attributes": ["attack", "magical", "leastMp", 20, 30, 0.85]
+        }
+      ],
+      "eventSeq": [0, 0, 0, 1, 1, 1, 2, 3],
+      "freezeTime": 9,
+      "priority": 2
+    },
+    {
+      "name": "Eve",
+      "hp": 95,
+      "pd": 96,
+      "mp": 106,
+      "md": 104,
+      "events": [
+        {
+          "name": "Sneaky",
+          "attributes": ["heal", "mp", 0, 20, 0.5]
+        },
+        {
+          "name": "Mogical Power",
+          "attributes": ["heal", "hp", 30, 25, 0.5]
+        },
+        {
+          "name": "Wand Attack",
+          "attributes": ["attack", "magical", "leastHp", 40, 50, 0.5]
+        },
+        {
+          "name": "Building Great Wall",
+          "attributes": ["magic", "pd", 10, 30, 30, 0.5]
+        },
+        {
+          "name": "More Magical Attack-ability",
+          "attributes": ["magic", "ma", 10, 30, 30, 0.5]
+        },
+        {
+          "name": "More Magical Defense",
+          "attributes": ["magic", "md", 10, 30, 30, 0.5]
+        }
+      ],
+      "eventSeq": [0, 0, 1, 2, 2, 3, 4, 5],
+      "freezeTime": 20,
+      "priority": 5
+    },
+    {
+      "name": "Nopper",
+      "hp": 72,
+      "pd": 83,
+      "mp": 118,
+      "md": 106,
+      "events": [
+        {
+          "name": "Nop",
+          "attributes": ["heal", "hp", 0, 0, 0]
+        }
+      ],
+      "eventSeq": [0],
+      "freezeTime": 15,
+      "priority": 3
+    }
+  ],
+  "endTime": 1000
+}
