@@ -1,0 +1,5 @@
+WINDOW_SIZE = 10
+
+USE_SR = True
+
+TIMEOUT = 0.01  # 10 ms
