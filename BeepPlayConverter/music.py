@@ -1,10 +1,15 @@
 import music21 as m
 import sys
+import argparse
 
 def eprint(*args, **kwargs):
     print(*args, file=sys.stderr, **kwargs)
 
-song = m.converter.parse('music.xml')
+parser = argparse.ArgumentParser()
+parser.add_argument('--file', default='music.xml')
+args = parser.parse_args()
+
+song = m.converter.parse(args.file)
 # process the ties
 song = song.stripTies()
 
